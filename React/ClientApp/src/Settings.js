@@ -10,10 +10,10 @@ var Settings = /** @class */ (function () {
         return new Promise(function (resolve, reject) {
             var xhr = new XMLHttpRequest();
             if (_this.typeSettings == "Camera") {
-                xhr.open("get", '/getConfig?typeConfig=Camera', true);
+                xhr.open("get", 'https://localhost:44303/api/config/getConfig?typeConfig=Camera', true);
             }
             else if (_this.typeSettings == "Service") {
-                xhr.open("get", '/getConfig?typeConfig=Service', true);
+                xhr.open("get", 'https://localhost:44303/api/getConfig?typeConfig=Service', true);
             }
             xhr.onload = function () { return resolve(JSON.parse(xhr.responseText)); };
             xhr.onerror = function () { return reject(xhr.statusText); };

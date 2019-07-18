@@ -17,10 +17,10 @@ export class Settings {
         return new Promise((resolve, reject) => {
             const xhr = new XMLHttpRequest();
             if (this.typeSettings == "Camera") {
-                xhr.open("get", '/getConfig?typeConfig=Camera', true);
+                xhr.open("get", 'https://localhost:44303/api/config/getConfig?typeConfig=Camera', true);
             }
             else if (this.typeSettings == "Service") {
-                xhr.open("get", '/getConfig?typeConfig=Service', true);
+                xhr.open("get", 'https://localhost:44303/api/getConfig?typeConfig=Service', true);
             }
             xhr.onload = () => resolve(JSON.parse(xhr.responseText));
             xhr.onerror = () => reject(xhr.statusText);
